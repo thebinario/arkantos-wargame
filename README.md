@@ -32,13 +32,18 @@ Não use essas credenciais em ambientes compartilhados. O cadastro da aplicaçã
 está disponível para desenvolvimento e será endurecido junto com a campanha de
 desafios.
 
+Para executar a loja em outro terminal, use `pnpm dev:store` e abra
+`http://localhost:3001`. Ela inclui catálogo, carrinho local, checkout com
+pagamento simulado, pedidos e uma área administrativa acessível ao operador
+seedado.
+
 Vulnerable web wargame in Next.js with a monorepo layout:
 
 ```text
 arkantos-wargame/
 ├── apps/
 │   ├── platform/          # Command Center Next.js
-│   └── store/             # Vulnerable e-commerce Next.js
+│   └── store/             # Arkantos Store Next.js
 ├── packages/
 │   ├── database/          # Prisma and migrations
 │   ├── challenge-engine/  # Checkpoint validation engine
