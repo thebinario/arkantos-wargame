@@ -7,8 +7,9 @@
   },
   "scripts": {
     "dev": "pnpm --filter @arkantos/platform dev",
-    "build": "pnpm --filter @arkantos/platform build",
-    "lint": "pnpm --filter @arkantos/platform lint",
+    "dev:store": "pnpm --filter @arkantos/store dev",
+    "build": "pnpm --filter @arkantos/platform build && pnpm --filter @arkantos/store build",
+    "lint": "pnpm --filter @arkantos/platform lint && pnpm --filter @arkantos/store lint",
     "db:generate": "pnpm --filter @arkantos/database prisma:generate",
     "db:push": "pnpm --filter @arkantos/database prisma:push",
     "db:seed": "pnpm --filter @arkantos/database prisma:seed"

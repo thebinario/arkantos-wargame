@@ -8,6 +8,13 @@ PostgreSQL. Cenários vulneráveis não compartilham banco, credenciais ou rede
 com a plataforma; serão adicionados como runtimes isolados nas próximas
 sprints.
 
+Na Sprint 2, `apps/store` é o e-commerce funcional de desenvolvimento. Ele
+compartilha somente o pacote de acesso ao banco e o cookie de sessão; a loja
+não importa páginas nem código de domínio do Command Center. Produtos,
+estoque, pedidos e itens de pedido ficam no PostgreSQL. O checkout valida
+produtos ativos, limita quantidades, decrementa estoque dentro de uma
+transação e grava o pagamento como `SIMULATED`.
+
 ### Identidade e sessão
 
 O fluxo inicial usa credenciais, `bcryptjs` para armazenamento irreversível de

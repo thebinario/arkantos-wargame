@@ -20,7 +20,10 @@ export default async function Home() {
     <main className="shell">
       <nav className="nav">
         <span className="eyebrow">ARKANTOS // WARGAME</span>
-        {user ? <Link href="/profile">OPERATOR / {user.displayName}</Link> : <Link href="/login">AUTHENTICATE</Link>}
+        <span className="nav-links">
+          <Link href="http://localhost:3001">OPEN STORE</Link>
+          {user ? <Link href="/profile">OPERATOR / {user.displayName}</Link> : <Link href="/login">AUTHENTICATE</Link>}
+        </span>
       </nav>
       <header className="hero">
         <div>
