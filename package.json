@@ -1,0 +1,22 @@
+{
+  "name": "arkantos-wargame",
+  "private": true,
+  "packageManager": "pnpm@10.12.4",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @arkantos/platform dev",
+    "build": "pnpm --filter @arkantos/platform build",
+    "lint": "pnpm --filter @arkantos/platform lint",
+    "db:generate": "pnpm --filter @arkantos/database prisma:generate",
+    "db:push": "pnpm --filter @arkantos/database prisma:push",
+    "db:seed": "pnpm --filter @arkantos/database prisma:seed"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "prisma"
+    ]
+  }
+}
