@@ -1,4 +1,36 @@
-# arkantos-wargame
+# Arkantos Wargame
+
+Plataforma open source de treinamento em segurança ofensiva, com um Command
+Center separado dos cenários vulneráveis. A Sprint 1 entrega a fundação local:
+workspace pnpm, PostgreSQL via Docker Compose, Prisma, autenticação por
+credenciais e perfil de operador.
+
+## Requisitos
+
+- Node.js 20.11+
+- pnpm 10+
+- Docker com Compose
+
+## Executar localmente
+
+```bash
+cp .env.example .env
+docker compose up -d postgres
+pnpm install
+pnpm db:generate
+pnpm db:push
+pnpm db:seed
+pnpm dev
+```
+
+Abra `http://localhost:3000`. A conta de desenvolvimento criada pelo seed é:
+
+- Email: `operator@arkantos.local`
+- Senha: `arkantos-dev`
+
+Não use essas credenciais em ambientes compartilhados. O cadastro da aplicação
+está disponível para desenvolvimento e será endurecido junto com a campanha de
+desafios.
 
 Vulnerable web wargame in Next.js with a monorepo layout:
 
@@ -30,3 +62,10 @@ arkantos-wargame/
 ├── .github/workflows/
 └── docker-compose.yml
 ```
+
+### Variáveis de ambiente
+
+Copie `.env.example` para `.env`. `DATABASE_URL` aponta para o PostgreSQL local
+e `SESSION_SECRET` documenta o segredo reservado para a evolução do mecanismo
+de sessão. As sessões atuais usam IDs aleatórios armazenados no banco e cookie
+HttpOnly.
